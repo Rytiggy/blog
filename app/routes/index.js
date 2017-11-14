@@ -35,14 +35,11 @@ let posts = [
 export default Ember.Route.extend({
 
 	model() {
-		this.get('store').createRecord('post')
-
-
-		return this.get('store').findAll('post').then((result)=>{
-            return {
-                posts:posts
-            };
-        })
+		var newPost = this.get('store').createRecord('post', {
+			title: 'EmberFire is flaming hot!',
+			body: 'You can store and sync data in realtime without a backend.'
+		});
+		newPost.save();
 	}
 
 });
