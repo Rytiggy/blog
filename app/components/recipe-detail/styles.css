@@ -1,0 +1,113 @@
+
+
+.recipe-text {
+  color: #2f313c;
+  padding: 0;
+  line-height:20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-indent: 30px;
+
+}
+
+.recipe-text:last-of-type {
+  margin-bottom: 60px;
+}
+
+.recipe-banner {
+  border-color: snow;
+  border-size: 2px;
+  width: 100%;
+}
+
+.recipe-banner-img {
+  background-image: url(https://i.ytimg.com/vi/6CFJhTKcGJ4/maxresdefault.jpg);
+  width: 100%;
+  height: 300px;
+}
+
+.recipe-ingredients {
+  max-width: 400px;
+  min-width: 400px;
+  height: 100%;
+}
+
+.recipe-ingredients * {
+  width: 400px;
+}
+
+.recipe ul {
+  padding-top: 15px;
+}
+.recipe ul li {
+  padding-top: 6px;
+}
+
+.recipe-title {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  margin-left: auto;
+  color: #2f313c;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.sticky {
+  position: fixed;
+  top: 20px;
+  transform: translateX(279%);
+  z-index: 10;
+  color: rgba(47, 49, 60, 0.42);
+}
+.sticky-spacer {
+  padding-top:  65px;
+}
+
+.recipe-directions {
+  margin-right: auto;
+  flex: 1;
+
+}
+
+.recipe-directions-title {
+  padding-top: 15px;
+}
+
+.steps {
+  flex: 5;
+  color: #2f313c;
+  padding-right:15px;  
+}
+
+
+.steps ol {
+  list-style-type: none;
+  padding:0;
+}
+ 
+.steps ol li {
+  position: relative;
+  padding-bottom:30px;
+} 
+ 
+.steps ol li p {
+  padding-left: 35px;
+  line-height:20px;
+  font-size:17px;
+}
+ 
+.steps span {
+  position: absolute;
+  font-family: "Merienda", cursive;
+  font-size: 2rem;
+      vertical-align: text-top;
+
+}
+
+p {
+  margin:0;
+}
+
+.oneLine {line-height: 20px;}
+.twoLine {line-height: 40px;}
