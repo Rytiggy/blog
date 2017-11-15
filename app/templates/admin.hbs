@@ -1,0 +1,37 @@
+{{outlet}}
+<div class="inputHolder">
+	<h2>Title</h2>
+	{{input type="text" value=title }}
+
+	<h2>Date Created</h2>
+	{{input type="text" value=dateCreated }}
+
+	<h2>Photos</h2> <!-- Loop -->
+	{{input type="text" value=photos }}
+
+	<h2>Blog Post</h2>
+	{{textarea type="text" value=blogPost }}
+
+	<h2>Steps</h2><!-- Loop -->
+	{{add-multiple-input model=model type='steps'}}
+
+
+	<h2>ingredients</h2><!-- Loop -->
+	{{add-multiple-input model=model type='ingredients'}}
+
+
+	<h2>Tags</h2><!-- Loop -->
+	{{add-multiple-input model=model type='tags'}}
+
+
+	<h2>Prep Time</h2>
+	{{input type="text" value=prepTime }}
+
+	<h2>Cook Time</h2>
+	{{input type="text" value=cookTime }}
+
+	<h2>Recipe Yield / Servings </h2>
+	{{input type="text" value=recipeYield }}
+
+	<button{{action 'submit'}} class="btn">submit</button>
+</div>

@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('index', { path: '/' });
   this.route('post', { path: 'post/:id' });
+  this.route('admin');
 });
 
 export default Router;

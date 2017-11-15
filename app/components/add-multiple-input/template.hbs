@@ -1,0 +1,23 @@
+{{yield}}
+
+
+<!-- Hard coded if find a way to make this dynamic at some point-->
+	{{#if steps}}
+		{{#each model.steps as |item|}}
+			{{input value=item}}
+		{{/each}}
+	{{/if}}
+	{{#if ingredients}}
+		{{#each model.ingredients as |item|}}
+			{{input value=item}}
+		{{/each}}
+	{{/if}}
+	{{#if tags}}
+		{{#each model.tags as |item|}}
+			{{input value=item}}
+		{{/each}}
+	{{/if}}
+
+
+	{{input value=this.singleVal}}
+	<button {{action "addField"}}>Add</button>
