@@ -1,7 +1,6 @@
 {{outlet}}
-
-{{#each model.posts as |post|}}
-	{{recipe-card post=post}}
+{{#each model as |post|}}
+	{{recipe-card post=post tags=post.tags}}
 {{/each}}
 
 

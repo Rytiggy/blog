@@ -2,12 +2,6 @@
 
 module.exports = function(environment) {
   var ENV = {
-    firebase: {
-      apiKey: 'AIzaSyBEk26sPChbUIwX_NlJwuPov9_G9WAB6Jc',
-      authDomain: 'blog-49891.firebaseapp.com',
-      databaseURL: 'https://blog-49891.firebaseio.com',
-      storageBucket: 'blog-49891.appspot.com',
-    },
 
     modulePrefix: 'blog',
     environment: environment,
@@ -27,6 +21,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    firebase: {
+      apiKey: 'AIzaSyBEk26sPChbUIwX_NlJwuPov9_G9WAB6Jc',
+      authDomain: 'blog-49891.firebaseapp.com',
+      databaseURL: 'https://blog-49891.firebaseio.com',
+      storageBucket: 'blog-49891.appspot.com',
     }
   };
 

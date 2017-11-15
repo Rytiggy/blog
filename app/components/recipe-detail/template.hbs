@@ -1,24 +1,31 @@
 {{yield}}
 <div class="content-holder">
-	<h2 class="recipe-title">Jalapeno Waffles</h2>
+	<div class="recipe-title-holder">
+		<h2 class="recipe-title">{{model.title}}</h2>
+		<span class="lead-text">{{model.dateCreated}}</span>
+	</div>
+
 	<div class="recipe-banner">
-		<div class="recipe-banner-img">
+		<div class="recipe-banner-img" style="background-image: url({{model.photos}});">
 		</div>
 	</div>
-	<p class="recipe-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-	<p class="recipe-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+	<p class="recipe-text">{{model.blogPost}}</p>
 
 	<div class="recipe-directions">
+		<hr>
+		<div class="text-center">
+			<span>Prep Time: <span class="recipe-text"> {{model.prepTime}} </span></span>
+			<span>Cook Time:  <span class="recipe-text"> {{model.cookTime}} </span></span>
+			<span>Serving(s):  <span class="recipe-text"> {{model.recipeYield}} </span></span>
+		</div>
+		<hr>
 		<div class="card-title recipe-directions-title">Directions </div>   
 
 		<div  class="steps">
 			<ol>
-				<li><span>1.</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur. </p></li>
-
-				<li><span>2.</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p></li>
-
-				<li><span>3.</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. </p></li>
-
+ 			{{#each model.steps as |step index| }}
+				<li><span>{{index}}.</span><p>{{step}}</p></li>
+ 			{{/each}}
 			</ol>
 		</div>
 
@@ -29,11 +36,9 @@
 			<div class="card-content">
 				<div class="card-title">Ingredients </div>
 				<ul>
-					<li> 1 Whole  <span class="recipe-text">Tomato </span></li>
-					<li> 2 Cups  <span class="recipe-text">Cheder cheese </span></li>
-					<li> 1/2 Cup  <span class="recipe-text">Diced Onion </span></li>
-					<li> 2 tsp  <span class="recipe-text">Salt </span></li>
-					<li> 3 cups  <span class="recipe-text">Flower </span></li>
+					{{#each model.ingredients as |ingredient| }}
+						<li>{{ingredient.amount}} <span class="recipe-text">{{ingredient.ingredient}} </span></li>
+ 					{{/each}}
 				</ul>
 			</div>
 		</div>

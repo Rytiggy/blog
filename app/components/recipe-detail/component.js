@@ -2,22 +2,24 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	didRender() {
-		let $window = $(window);
-		let $stickyEl = $(".recipe-title");
-		let elTop = $stickyEl.offset().top - 25;
-		let cards = $(".cards");
+		// let $window = $(window);
+		// let $stickyEl = $(".recipe-title");
+		// let elTop = $stickyEl.offset().top - 25;
+		// let cards = $(".cards");
+
+
+		// Action listeners
+		// $window.scroll(function() {
+		//   cards.toggleClass("sticky-spacer", $window.scrollTop() > elTop + 1);
+		//   $stickyEl.toggleClass("sticky", $window.scrollTop() > elTop + 1);
+		// });
+
 
 		//INIT Fnction
 		$(function() {
 		  checkStepLines();
 		});
-
-		// Action listeners
-		$window.scroll(function() {
-		  cards.toggleClass("sticky-spacer", $window.scrollTop() > elTop + 1);
-		  $stickyEl.toggleClass("sticky", $window.scrollTop() > elTop + 1);
-		});
-
+		
 		$(window).resize(function() {
 		  checkStepLines();
 		});

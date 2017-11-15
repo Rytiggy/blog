@@ -47,6 +47,8 @@ nav {
   height: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
+    text-decoration: none;
+
 }
 .menu-item-link:first-of-type {
  margin-left: 40px;

@@ -39,12 +39,38 @@ html {
   margin: 0 auto;
   padding: 0;
   max-width: 1200px;
+
+
+
 }
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards .cards-item {
+  width: 32%;
+}
+
+
+
+
+
 
 .cards-item {
   display: flex;
+  flex: 1 1 0;
   padding:15px;
-  max-width: 370px;
+  max-height:400px;
+  min-width: 300px;
+  max-width: 400px;
 }
 @media (min-width: 40rem) {
   .cards-item {
@@ -66,7 +92,7 @@ html {
   flex-direction: column;
   overflow: hidden;
   max-width: 900px;
-  width: 100%;
+  width: 100%!important;
 }
 .card:hover .card-image {
   filter: contrast(100%);
@@ -115,6 +141,8 @@ html {
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;
+  height: 210px;
+  overflow: hidden;
 }
 /*End of Cards*/
 
@@ -131,4 +159,14 @@ html {
 
 .sticky-spacer {
   padding-top:  50px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.text-center{
+  text-align: center;
 }

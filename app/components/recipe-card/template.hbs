@@ -4,8 +4,15 @@
 		<div class="card-image card-image-flowers"></div>
 		<div class="card-content">
 			<div class="card-title">{{post.title}}</div>
+
+			{{#each tags as |tag|}}
+				{{tag}}
+			{{/each}}
+
 			<p class="card-text">{{post.blogPost}}</p>
-			<a href="" class="btn btn-block card-btn">view recipe</a>
+			{{#link-to "post" post.id class="btn btn-block card-btn"}}
+				view recipe
+			{{/link-to}}
 		</div>
 	</div>
 </div>
