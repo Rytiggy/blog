@@ -174,15 +174,15 @@ hr {
 
 /*admin view*/
 
-input {
+.inputHolder input {
   margin: 0 auto;
-  width:600px;
+  width:100%;
   height:30px;
   font-size: 25px;
   text-align: center;
   display: block;
 }
-textarea {
+.inputHolder textarea {
   margin: 0 auto;
   width:600px;
   height:200px;
@@ -192,10 +192,57 @@ textarea {
 
 .inputHolder {
   width:100%;
+  max-width: 600px;
   text-align: center;
+}
+.inline-button-admin {
+      width: 570px!important;
+      margin-right:7px!important;
+      float:left;
+}
+
+.inline-radio {
+  width:15px!important;
+  margin: 0!important;
 }
 
 .inputHolder h2{
   margin-bottom: 0px;
 }
+
+.list-of-items {
+  width:100%;
+}
+
+.inputHolder td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.inputHolder tr:nth-child(even) {
+    background-color: #dddddd;
+}
 /*end of admin view*/
+
+
+.pull-right{
+  float:right;
+}
+
+.pull-center {
+  margin:0 auto;
+}
+
+.w-100{
+  width:100%;
+}
+
+.tag:after {
+    content: ',';
+}
+
+.tag:last-of-type:after {
+    content: '';
+}
+

@@ -1,14 +1,14 @@
 {{yield}}
 <div class="cards-item">
 	<div class="card">
-		<div class="card-image card-image-flowers"></div>
+		<div class="card-image card-image-flowers" style="background-image: url({{post.photos.[0].objectOne}})"></div>
 		<div class="card-content">
 			<div class="card-title">{{post.title}}</div>
-
-			{{#each tags as |tag|}}
-				{{tag}}
-			{{/each}}
-
+			<div class="tags-inline">
+				{{#each tags as |tag|}}
+					<span class="tag">{{tag}}</span>
+				{{/each}}
+			</div>
 			<p class="card-text">{{post.blogPost}}</p>
 			{{#link-to "post" post.id class="btn btn-block card-btn"}}
 				view recipe

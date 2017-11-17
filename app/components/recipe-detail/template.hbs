@@ -6,9 +6,8 @@
 	</div>
 
 	<div class="recipe-banner">
-		<div class="recipe-banner-img" style="background-image: url({{model.photos}});">
+		{{dot-nav photos=model.photos}}
 		</div>
-	</div>
 	<p class="recipe-text">{{model.blogPost}}</p>
 
 	<div class="recipe-directions">
@@ -23,9 +22,9 @@
 
 		<div  class="steps">
 			<ol>
- 			{{#each model.steps as |step index| }}
-				<li><span>{{index}}.</span><p>{{step}}</p></li>
- 			{{/each}}
+	 			{{#each model.steps as |step index| }}
+					<li><span>{{add index one}}.</span><p>{{step}}</p></li>
+	 			{{/each}}
 			</ol>
 		</div>
 
@@ -37,7 +36,7 @@
 				<div class="card-title">Ingredients </div>
 				<ul>
 					{{#each model.ingredients as |ingredient| }}
-						<li>{{ingredient.amount}} <span class="recipe-text">{{ingredient.ingredient}} </span></li>
+						<li>{{ingredient.objectOne}} <span class="recipe-text">{{ingredient.objectTwo}}</span></li>
  					{{/each}}
 				</ul>
 			</div>

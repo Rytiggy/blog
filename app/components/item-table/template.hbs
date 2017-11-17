@@ -1,0 +1,13 @@
+{{yield}}
+<table class='list-of-items'>
+	<tr>
+    	<th>title</th>
+    	<th>action</th>
+ 	</tr>
+ 	{{#each model as |record|}}
+		<tr>
+			<td>Maria Anders</td>
+			<td><button class="btn w-100">edit</button></td>
+		</tr>
+	{{/each}}
+</table>

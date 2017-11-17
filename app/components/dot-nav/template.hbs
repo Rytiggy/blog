@@ -1,0 +1,31 @@
+{{yield}}
+
+<ul class="slides">
+	{{#each photos as |photoUrl index|}}
+    <input type="radio" name="radio-btn" id="img-{{index}}" checked />
+    <li class="slide-container">
+		<div class="slide">
+			<img src="{{photoUrl.objectOne}}" />
+        </div>
+		<div class="nav">
+			<label for="img-{{sub index one}}" class="prev">&#x2039;</label>
+			<label for="img-{{add index one}}" class="next">&#x203a;</label>
+		</div> 
+    </li>
+    {{/each}}
+
+
+    <li class="nav-dots">
+    {{#each photos as |photoUrl index|}}
+    	<label for="img-{{index}}" class="nav-dot" id="img-dot-{{index}}"></label>
+    {{/each}}
+    </li>
+</ul>
+
+<style>
+    {{#each photos as |photoUrl index|}}
+		input#img-{{index}}:checked ~ .nav-dots label#img-dot-{{index}} {
+			background: snow;
+		}
+    {{/each}}
+</style>

@@ -1,7 +1,20 @@
 {{yield}}
 
 
-<!-- Hard coded if find a way to make this dynamic at some point-->
+<!-- Hard coded if(s), find a way to make this dynamic at some point-->
+	{{#if photos}}
+		{{#each model.photos as |item index|}}
+		<div class="display: inline-block;">
+			<input value={{item.objectOne}} class='inline-button-admin'/>
+			<input
+				type="radio" 
+				name="favorite"
+				value={{item.objectTwo}} 
+				class='inline-radio' checked/> 
+		</div>
+		{{/each}}
+
+	{{/if}}
 	{{#if steps}}
 		{{#each model.steps as |item|}}
 			{{input value=item}}
@@ -9,7 +22,8 @@
 	{{/if}}
 	{{#if ingredients}}
 		{{#each model.ingredients as |item|}}
-			{{input value=item}}
+			amount:{{input value=item.objectOne}}
+			ingredient:{{input value=item.objectTwo}}
 		{{/each}}
 	{{/if}}
 	{{#if tags}}
@@ -18,6 +32,10 @@
 		{{/each}}
 	{{/if}}
 
-
-	{{input value=this.singleVal}}
-	<button {{action "addField"}}>Add</button>
+	{{#if ingredients}}
+		amount:{{input value=this.singleVal}}
+		ingredient:{{input value=this.secondVal}}
+	{{else}}
+		{{input value=this.singleVal}}
+	{{/if}}
+	<button {{action "addField"}} class="btn">Add</button>

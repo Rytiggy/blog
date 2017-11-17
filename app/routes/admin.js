@@ -3,12 +3,12 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	model(){
 		return {
-			images:[],
-			steps:[],
 			photos:[],
+			steps:[],
 			ingredients:[],
 			tags:[],
-			singleVal:"",
+			singleVal:'',
+			secondVal:'',
 		}
 	}
 });

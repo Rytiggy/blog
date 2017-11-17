@@ -1,5 +1,12 @@
 {{outlet}}
+
+
+
 <div class="inputHolder">
+	{{item-table model=model}}
+	<hr />
+	<br>
+
 	<h2>Title</h2>
 	{{input type="text" value=title }}
 
@@ -7,7 +14,7 @@
 	{{input type="text" value=dateCreated }}
 
 	<h2>Photos</h2> <!-- Loop -->
-	{{input type="text" value=photos }}
+	{{add-multiple-input model=model type='photos' }}
 
 	<h2>Blog Post</h2>
 	{{textarea type="text" value=blogPost }}
@@ -16,7 +23,7 @@
 	{{add-multiple-input model=model type='steps'}}
 
 
-	<h2>ingredients</h2><!-- Loop -->
+	<h2>ingredients</h2><!-- Loop --> <!-- two inputs -->
 	{{add-multiple-input model=model type='ingredients'}}
 
 
