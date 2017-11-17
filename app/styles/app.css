@@ -27,6 +27,11 @@ html {
   text-align:center;
   text-transform: lowercase;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: #f9a5a5;
 }
 .btn-block {
   display: block;

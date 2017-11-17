@@ -7,7 +7,12 @@
  	{{#each model as |record|}}
 		<tr>
 			<td>{{record.title}}</td>
-			<td><button class="btn w-100"{{action 'editPost' record.id}}>edit</button></td>
+			<td>
+
+				<button class="btn w-100"{{action 'editPost' record.id}}>edit</button>
+				<button class="btn btn-danger w-100"{{action 'deletePost' record.id}}>delete</button>
+
+			</td>
 		</tr>
 	{{/each}}
 </table>

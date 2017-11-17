@@ -29,6 +29,16 @@ export default Ember.Controller.extend({
 
 
 		},
+		deletePost(id){
+			var answer = prompt('Type "delete" to delete the post', ' '); 
+			if(answer === 'delete'){
+				this.store.findRecord('post', id, { backgroundReload: false }).then(function(post) {
+					post.destroyRecord(); 
+				});
+			}else{
+				console.log('Post not deleted')
+			}
+		},
 		submit() {
 
 			//Update a post
@@ -36,7 +46,7 @@ export default Ember.Controller.extend({
 				let postId = this.get('postId') 
 				this.store.findRecord('post', postId).then((post)=> {
 					console.log('postId' , postId)
-				 	post.set('title', this.get('title'))
+					post.set('title', this.get('title'))
 					post.set('author', "Kristina R King")
 					post.set('dateCreated', this.get('dateCreated'))
 					post.set('photos', this.get('model.photos'))
@@ -48,7 +58,7 @@ export default Ember.Controller.extend({
 					post.set('cookTime', this.get('cookTime'))
 					post.set('recipeYield', this.get('recipeYield'))
 
-				  post.save(); // => PATCH to '/posts/1'
+					post.save(); 
 				});
 			} else {// create a new post
 				let newPost = this.store.createRecord('post', {

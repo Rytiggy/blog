@@ -4,7 +4,7 @@
 
 <div class="inputHolder">
 
-	{{item-table model=post  editPost=(action 'editPost')}}
+	{{item-table model=post  editPost=(action 'editPost') deletePost=(action 'deletePost')}}
 	<br>
 	<button{{action 'toggleEditPost'}} class="btn">editPost</button>
 
