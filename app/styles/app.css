@@ -201,7 +201,7 @@ hr {
       float:left;
 }
 
-.inline-radio {
+.inline-radio {x
   width:15px!important;
   margin: 0!important;
 }
@@ -221,7 +221,7 @@ hr {
 }
 
 .inputHolder tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #fcc4d78c;
 }
 /*end of admin view*/
 
@@ -245,4 +245,48 @@ hr {
 .tag:last-of-type:after {
     content: '';
 }
+
+
+/*Code below here*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

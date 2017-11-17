@@ -6,8 +6,8 @@
  	</tr>
  	{{#each model as |record|}}
 		<tr>
-			<td>Maria Anders</td>
-			<td><button class="btn w-100">edit</button></td>
+			<td>{{record.title}}</td>
+			<td><button class="btn w-100"{{action 'editPost' record.id}}>edit</button></td>
 		</tr>
 	{{/each}}
 </table>

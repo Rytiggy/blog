@@ -3,7 +3,11 @@
 
 
 <div class="inputHolder">
-	{{item-table model=model}}
+
+	{{item-table model=post  editPost=(action 'editPost')}}
+	<br>
+	<button{{action 'toggleEditPost'}} class="btn">editPost</button>
+
 	<hr />
 	<br>
 

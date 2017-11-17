@@ -11,4 +11,11 @@ export default Ember.Route.extend({
 			secondVal:'',
 		}
 	}
+	// async afterModel(post) {
+	// 			console.log('DDDD' ,this.get('post'))
+
+	// 	// this.set('post', (await post));
+	// 	// console.log(this.get('post'))
+	// }
+
 });
