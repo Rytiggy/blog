@@ -4,8 +4,9 @@
 <!-- Hard coded if(s), find a way to make this dynamic at some point-->
 	{{#if photos}}
 		{{#each model.photos as |item index|}}
-		<div class="display: inline-block;">
-			<input value={{item.objectOne}} class='inline-button-admin'/>
+		<div>
+			<button {{action "removeField" index model.photos "model.photos"}} class="btn btn-danger">remove</button>
+			<input value={{item.objectOne}} class='inline-button-admin' disabled/>
 			<input
 				type="radio" 
 				name="favorite"
@@ -16,26 +17,39 @@
 
 	{{/if}}
 	{{#if steps}}
-		{{#each model.steps as |item|}}
-			{{input value=item}}
+		{{#each model.steps as |item index|}}
+			<button {{action "removeField" index model.steps "model.steps"}} class="btn btn-danger">remove</button>
+			{{input value=item disabled=true}}
 		{{/each}}
 	{{/if}}
+	
 	{{#if ingredients}}
-		{{#each model.ingredients as |item|}}
-			amount:{{input value=item.objectOne}}
-			ingredient:{{input value=item.objectTwo}}
-		{{/each}}
-	{{/if}}
-	{{#if tags}}
-		{{#each model.tags as |item|}}
-			{{input value=item}}
+		{{#each model.ingredients as |item index|}}
+			<button {{action "removeField" index model.ingredients "model.ingredients"}} class="btn btn-danger">remove</button>
+
+			amount:{{input value=item.objectOne disabled=true}}
+			ingredient:{{input value=item.objectTwo disabled=true}}
 		{{/each}}
 	{{/if}}
 
+	{{#if tags}}
+		{{#each model.tags as |item index|}}
+			<button {{action "removeField" index model.tags "model.tags"}} class="btn btn-danger">remove</button>
+			{{input value=item disabled=true}}
+		{{/each}}
+	{{/if}}
+
+
+
+
+<!-- 	Get the input-->
 	{{#if ingredients}}
 		amount:{{input value=this.singleVal}}
 		ingredient:{{input value=this.secondVal}}
 	{{else}}
 		{{input value=this.singleVal}}
 	{{/if}}
+
+
+
 	<button {{action "addField"}} class="btn">Add</button>

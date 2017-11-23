@@ -30,7 +30,7 @@ export default Ember.Component.extend({
 				// if(this.get('type') === 'photos' ){
 				// 	this.set('secondVal', false)
 				// }
-				this.model[this.get('type')].addObject({ objectOne:this.get('singleVal') , objectTwo:this.get('secondVal') });
+				this.model[this.get('type')].addObject( { objectOne:this.get('singleVal') , objectTwo:this.get('secondVal') } );
 				this.set('secondVal','')
 			}else{
 				this.model[this.get('type')].addObject(this.get('singleVal'));
@@ -38,7 +38,18 @@ export default Ember.Component.extend({
 
 			this.set('singleVal','')
 		},
-		checkRadio(index){}
+		removeField(index , modelType , type){
+			modelType.splice(index,1);
+			if(modelType.length === 0){
+				this.set(type , [] )
+			}else{
+				this.set(type , [] )
+				this.set(type , modelType )
+			}
+		},
+		checkRadio(index){
+
+		}
 	}
 });
 

@@ -1,5 +1,17 @@
 import Ember from 'ember';
 
+// var transitionAfterConfirmation = function(target){
+//   var defaultEvent = Ember.Route.transitionTo(target),
+//       event = function(stateManager, context){
+//           if( confirm("Really go?")){
+//               defaultEvent(stateManager,context);
+//           }
+//       };
+
+//   event.transitionTarget = target;
+
+//   return event;
+// };
 export default Ember.Route.extend({
 	model(){
 		return {
@@ -10,7 +22,9 @@ export default Ember.Route.extend({
 			singleVal:'',
 			secondVal:'',
 		}
-	}
+	},
+
+
 	// async afterModel(post) {
 	// 			console.log('DDDD' ,this.get('post'))
 

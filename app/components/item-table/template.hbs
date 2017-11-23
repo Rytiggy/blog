@@ -1,18 +1,19 @@
 {{yield}}
-<table class='list-of-items'>
+{{#if model.length}}
+<table class='list-of-items table'>
 	<tr>
     	<th>title</th>
     	<th>action</th>
  	</tr>
  	{{#each model as |record|}}
-		<tr>
+		<tr class="table-row">
 			<td>{{record.title}}</td>
 			<td>
-
-				<button class="btn w-100"{{action 'editPost' record.id}}>edit</button>
-				<button class="btn btn-danger w-100"{{action 'deletePost' record.id}}>delete</button>
+				<button class="btn btn-danger w-49"{{action 'deletePost' record.id}}>delete</button>
+				<button class="btn w-49"{{action 'editPost' record.id}}>edit</button>
 
 			</td>
 		</tr>
 	{{/each}}
 </table>
+{{/if}}

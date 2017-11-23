@@ -1,6 +1,11 @@
 {{outlet}}
-{{#each model as |post|}}
-	{{recipe-card post=post tags=post.tags}}
+
+{{newest-recipe post=model.lastObject class="banner"}}
+
+{{#each model as |post index|}}
+	{{#if (eq post model.lastObject)}}{{else}}
+		{{recipe-card post=post tags=post.tags}}
+	{{/if}}
 {{/each}}
 
 

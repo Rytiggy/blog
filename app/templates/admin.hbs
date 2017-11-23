@@ -1,48 +1,123 @@
 {{outlet}}
 
+<div class="admin-view">
+
+	<div class="side-menu">
+		<ul class="side-menu-ul">
+			<li {{action 'newPost'}}> New Post</li>
+			<li {{action 'toggleEditPost'}} > All Post</li>
+		</ul>
+	</div>
+	<div class="admin-body">
+		{{#if allPost}}
+		{{search-table}}
+			{{item-table model=post  editPost=(action 'editPost') deletePost=(action 'deletePost')}}
+	
+		{{else}}
+			<button{{action 'clearFields'}} class="btn btn-danger">Clear All fields</button>
 
 
+		<h1>Post</h1>
+		<div class="input-group">
+			{{input type="text" value=title class="m-input"}}
+			<label>Title</label>
+		</div>
+		<div class="input-group">
+			{{input type="text" value=dateCreated class="m-input"}}
+			<label>Date Created</label>
+		</div>
+		<div class="input-group">
+			{{add-multiple-input model=model type='photos' class="m-input"}}
+			<label>Photos</label>
+		</div>
+		<div class="input-group">
+			{{textarea type="text" value=blogPost class="m-input text-area"}}
+			<label>Blog Post</label>
+		</div>
+		<div class="input-group">
+			{{add-multiple-input model=model type='steps' class="m-input"}}
+			<label>Steps</label>
+		</div>
+		<div class="input-group">
+			{{add-multiple-input model=model type='ingredients' class="m-input"}}
+			<label>ingredients</label>
+		</div>
+		<div class="input-group">
+			{{add-multiple-input model=model type='tags' class="m-input"}}
+			<label>Tags</label>
+		</div>
+
+		<div class="input-group">
+			{{input type="text" value=prepTime  class="m-input"}}
+			<label>Prep Time</label>
+		</div>
+		<div class="input-group">
+			{{input type="text" value=cookTime  class="m-input"}}
+			<label>Cook Time</label>
+		</div>
+		<div class="input-group">
+			{{input type="text" value=recipeYield  class="m-input"}}
+			<label>Recipe Yield / Servings</label>
+		</div>
+
+		<div class="input-group">
+			<button{{action 'submit'}} class="btn">submit</button>
+		</div>
+
+
+
+
+
+
+
+
+
+			<!-- <h2>Title</h2> -->
+			<!-- {{input type="text" value=title }} -->
+
+		<!-- 	<h2>Date Created</h2>
+			{{input type="text" value=dateCreated }} -->
+
+			<!-- <h2>Photos</h2>
+			{{add-multiple-input model=model type='photos' }} -->
+
+			<!-- <h2>Blog Post</h2>
+			{{textarea type="text" value=blogPost }} -->
+<!-- 
+			<h2>Steps</h2>
+			{{add-multiple-input model=model type='steps'}} -->
+
+<!-- 
+			<h2>ingredients</h2>
+			{{add-multiple-input model=model type='ingredients'}} -->
+
+
+		<!-- 	<h2>Tags</h2>
+			{{add-multiple-input model=model type='tags'}} -->
+
+
+			<!-- <h2>Prep Time</h2>
+			{{input type="text" value=prepTime }} -->
+<!-- 
+			<h2>Cook Time</h2>
+			{{input type="text" value=cookTime }}
+ -->
+	<!-- 		<h2>Recipe Yield / Servings </h2>
+			{{input type="text" value=recipeYield }} -->
+
+<!-- 			<button{{action 'submit'}} class="btn">submit</button>
+ -->
+
+		{{/if}}
+	</div>
+	
+</div>
+
+
+
+<!-- 
 <div class="inputHolder">
 
-	{{item-table model=post  editPost=(action 'editPost') deletePost=(action 'deletePost')}}
-	<br>
-	<button{{action 'toggleEditPost'}} class="btn">editPost</button>
 
-	<hr />
-	<br>
-
-	<h2>Title</h2>
-	{{input type="text" value=title }}
-
-	<h2>Date Created</h2>
-	{{input type="text" value=dateCreated }}
-
-	<h2>Photos</h2> <!-- Loop -->
-	{{add-multiple-input model=model type='photos' }}
-
-	<h2>Blog Post</h2>
-	{{textarea type="text" value=blogPost }}
-
-	<h2>Steps</h2><!-- Loop -->
-	{{add-multiple-input model=model type='steps'}}
-
-
-	<h2>ingredients</h2><!-- Loop --> <!-- two inputs -->
-	{{add-multiple-input model=model type='ingredients'}}
-
-
-	<h2>Tags</h2><!-- Loop -->
-	{{add-multiple-input model=model type='tags'}}
-
-
-	<h2>Prep Time</h2>
-	{{input type="text" value=prepTime }}
-
-	<h2>Cook Time</h2>
-	{{input type="text" value=cookTime }}
-
-	<h2>Recipe Yield / Servings </h2>
-	{{input type="text" value=recipeYield }}
-
-	<button{{action 'submit'}} class="btn">submit</button>
 </div>
+ -->

@@ -4,12 +4,84 @@ export default Ember.Controller.extend({
 	post: '',
 	isEditing: false,
 	postId: '',
+	allPost:false,
+	init: function () {
+		this._super();
+
+		Ember.run.schedule("afterRender",this,function() {
+
+
+			if(localStorage.getItem("post") !== null){
+				let post = JSON.parse(localStorage.getItem("post"));
+				this.set('title' , post.title )
+				this.set('dateCreated' , post.dateCreated )
+				this.set('model.photos' , post.photos)
+				this.set('blogPost' , post.blogPost)
+				this.set('model.steps' , post.steps )
+				this.set('model.ingredients' , post.ingredients )
+				this.set('model.tags' , post.tags )
+				this.set('prepTime' , post.prepTime)
+				this.set('cookTime' , post.cookTime )
+				this.set('recipeYield' , post.recipeYield)
+			}
+
+			$(document).on('input', 'input:text', ()=> {
+
+				let post = {
+					title: this.get('title'),
+					author: "Kristina R King",
+					dateCreated: this.get('dateCreated'),
+					photos: this.get('model.photos'),
+					blogPost: this.get('blogPost'),
+					steps: this.get('model.steps'),
+					ingredients: this.get('model.ingredients'),
+					tags: this.get('model.tags'),
+					prepTime: this.get('prepTime'),
+					cookTime: this.get('cookTime'),
+					recipeYield: this.get('recipeYield')
+
+				}
+				localStorage.setItem("post", JSON.stringify(post));
+				post = localStorage.getItem("post");
+
+			});
+		});
+	},
+
+
 
 	actions: {
+		newPost() {
+			this.set('allPost' , false)
+
+		},
+		clearFields() {
+			if (confirm("Are you sure you want to clear all input fields?") == true ) {
+				this.set('title' , '' )
+				this.set('dateCreated' , '' )
+				this.set('model.photos' , [])
+				this.set('blogPost' , '')
+				this.set('model.steps' , [] )
+				this.set('model.ingredients' , [] )
+				this.set('model.tags' , [] )
+				this.set('prepTime' , '')
+				this.set('cookTime' , '' )
+				this.set('recipeYield' , '')	
+
+				this.set('isEditing' , false)
+				this.set('postId', '')		
+			}
+			else {
+				
+			}
+
+		},
 		toggleEditPost(){
 			this.set('post' , this.store.findAll('post'))
+			this.set('allPost' , true)
 		},
 		editPost(id){
+			this.set('allPost' , false)
 			let post = this.get('store').peekRecord('post', id);
 			//set all Text on page
 			this.set('title' , post.get('title') )
@@ -78,7 +150,9 @@ export default Ember.Controller.extend({
 				newPost.save();
 			}
 
-			//console.log(newPost)
+			localStorage.removeItem('post');
+
+
 		}
 	}
 });

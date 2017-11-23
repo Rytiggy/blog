@@ -11,9 +11,9 @@ nav {
   /*   box-shadow: 20px 10px 40px -14px rgba(0, 0, 0, 0.25); */
 }
 .nav-holder {
-    margin: 0 auto;
-    width:100%;
-    max-width: 1200px;
+  margin: 0 auto;
+  width:100%;
+  max-width: 1200px;
 }
 
 
@@ -22,7 +22,7 @@ nav {
   /*   background: rgba(255, 250, 250, .9); */
   color: #2f313c;
   height: 70px;
-  width: 135px;
+  width: 220px;
   font-size: 40px;
   text-align: center;
   display: inline-block;
@@ -47,7 +47,7 @@ nav {
   height: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
-    text-decoration: none;
+  text-decoration: none;
 
 }
 .menu-item-link:first-of-type {
@@ -59,4 +59,9 @@ nav {
 
 .spacer {
   margin-top: 75px;
+}
+
+.user {
+  margin-right: 25px;
+  float:right;
 }

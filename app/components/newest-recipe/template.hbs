@@ -1,0 +1,11 @@
+{{yield}}
+{{#link-to "post" post.id class="link"}}
+
+<div class="banner-img" style="background-image: url({{post.photos.[0].objectOne}})" >
+
+</div>
+<div class='title'>
+	<h1 class="title-text">{{post.title}}</h1>
+	<span class="title-text lead-text">{{post.dateCreated}}</span>
+</div>
+{{/link-to}}
